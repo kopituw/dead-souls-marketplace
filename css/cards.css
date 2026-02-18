@@ -1,0 +1,261 @@
+/* Cards CSS - Catalog Grid and Card Styles */
+
+/* Catalog Controls */
+.catalog-controls {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.filter-controls {
+    display: inline-block;
+}
+
+/* Catalog Grid */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Landlord Card */
+.landlord-card {
+    background: var(--background-light);
+    border: 3px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 12px var(--shadow-medium);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.landlord-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.landlord-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--shadow-heavy);
+    border-color: var(--primary-color);
+}
+
+.landlord-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.landlord-card:hover .buy-button {
+    background: linear-gradient(135deg, var(--success-color), #32CD32);
+    transform: translateY(-2px);
+}
+
+/* Card Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.landlord-name {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px var(--shadow-light);
+}
+
+.landlord-title {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Card Image */
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-color);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Card Details */
+.card-details {
+    margin-bottom: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.souls-count {
+    color: var(--secondary-color);
+}
+
+.price-per-soul {
+    color: var(--success-color);
+}
+
+.total-value {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Card Actions */
+.card-actions {
+    text-align: center;
+}
+
+.buy-button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--shadow-medium);
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    font-family: inherit;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-button::before {
+    content: '🛒';
+    margin-right: 0.5rem;
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, var(--success-color), #32CD32);
+    border-color: var(--success-color);
+    box-shadow: 0 6px 12px var(--shadow-heavy);
+}
+
+.buy-button:active {
+    transform: translateY(0);
+}
+
+/* Card Special Effects */
+.landlord-card.featured {
+    border-color: var(--accent-color);
+    background: linear-gradient(135deg, var(--background-light), rgba(205, 133, 63, 0.1));
+}
+
+.landlord-card.featured::before {
+    background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+    height: 6px;
+}
+
+.landlord-card.featured .landlord-name::after {
+    content: '⭐';
+    margin-left: 0.5rem;
+}
+
+/* Loading State */
+.card-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.card-loading .buy-button {
+    background: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-catalog {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+}
+
+.empty-catalog h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.empty-catalog p {
+    font-style: italic;
+}
+
+/* Greed Level Styles */
+.greedy-bar.чрезвычайно_жадный {
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    border-color: #8B0000;
+}
+
+.greedy-bar.очень_жадный {
+    background: linear-gradient(135deg, #B22222, #CD5C5C);
+    border-color: #B22222;
+}
+
+.greedy-bar.умеренно_жадный {
+    background: linear-gradient(135deg, #D2691E, #DEB887);
+    border-color: #D2691E;
+}
+
+.greedy-bar.слегка_жадный {
+    background: linear-gradient(135deg, #F4A460, #FFDEAD);
+    border-color: #F4A460;
+}
+
+.greedy-bar.не_жадный {
+    background: linear-gradient(135deg, #228B22, #32CD32);
+    border-color: #228B22;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .landlord-card {
+        padding: 1rem;
+    }
+    
+    .landlord-name {
+        font-size: 1.3rem;
+    }
+    
+    .card-image-container {
+        height: 150px;
+    }
+}

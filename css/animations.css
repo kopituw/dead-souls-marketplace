@@ -1,0 +1,321 @@
+/* Animations CSS - Hover Effects, Fades, Pulses */
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--shadow-light);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Section Transitions */
+.section {
+    animation: fadeIn 0.5s ease;
+}
+
+.section.active {
+    animation: slideInLeft 0.5s ease;
+}
+
+/* Card Hover Effects */
+.landlord-card {
+    transition: all 0.3s ease;
+}
+
+.landlord-card:hover {
+    animation: pulse 0.5s ease;
+}
+
+.landlord-card:hover .card-image {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Button Hover Effects */
+.cta-button,
+.buy-button,
+.action-button,
+.modal-button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before,
+.buy-button::before,
+.action-button::before,
+.modal-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before,
+.buy-button:hover::before,
+.action-button:hover::before,
+.modal-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Navigation Link Effects */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Stat Card Hover Effects */
+.stat-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-heavy);
+    animation: pulse 0.5s ease;
+}
+
+.stat-card:hover .stat-value {
+    animation: bounce 0.5s ease;
+}
+
+/* Chart Bar Hover Effects */
+.bar-chart .bar {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bar-chart .bar:hover {
+    transform: scaleY(1.1);
+    filter: brightness(1.1);
+    animation: glow 1s ease-in-out infinite;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    margin: 2rem auto;
+}
+
+/* Success Animation */
+.success-animation {
+    animation: bounce 0.5s ease, pulse 0.5s ease 0.5s;
+}
+
+/* Error Animation */
+.error-animation {
+    animation: shake 0.5s ease;
+}
+
+/* Tooltip Animation */
+.tooltip {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+}
+
+.tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Staggered Animations for Cards */
+.landlord-card:nth-child(1) { animation-delay: 0.1s; }
+.landlord-card:nth-child(2) { animation-delay: 0.2s; }
+.landlord-card:nth-child(3) { animation-delay: 0.3s; }
+.landlord-card:nth-child(4) { animation-delay: 0.4s; }
+.landlord-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Hover State for Interactive Elements */
+.interactive {
+    transition: all 0.2s ease;
+}
+
+.interactive:hover {
+    transform: scale(1.02);
+}
+
+.interactive:active {
+    transform: scale(0.98);
+}
+
+/* Focus States for Accessibility */
+button:focus,
+select:focus,
+input:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    animation: pulse 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Performance Optimizations */
+.landlord-card,
+.cta-button,
+.buy-button,
+.action-button,
+.modal-button {
+    will-change: transform;
+}
+
+/* Mobile-Specific Animations */
+@media (max-width: 768px) {
+    .landlord-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .cta-button:hover,
+    .buy-button:hover,
+    .action-button:hover,
+    .modal-button:hover {
+        transform: translateY(-1px);
+    }
+}

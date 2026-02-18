@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рынок Мёртвых Душ - Купите душу сегодня!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-brand">
+            <h1>☠️ Рынок Мёртвых Душ</h1>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link">Главная</a></li>
+            <li><a href="#catalog" class="nav-link">Каталог</a></li>
+            <li><a href="#cabinet" class="nav-link">Мой Кабинет</a></li>
+            <li><a href="#analytics" class="nav-link">Аналитика</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Добро пожаловать на Рынок Мёртвых Душ!</h1>
+                <p class="hero-subtitle">Купите душу сегодня и постройте свою империю усопших!</p>
+                <div class="hero-cta">
+                    <button class="cta-button" onclick="showSection('catalog')">
+                        🧾 Просмотреть Каталог
+                    </button>
+                </div>
+            </div>
+            <div class="hero-decoration">
+                <div class="floating-souls">
+                    <span class="soul">👻</span>
+                    <span class="soul">💀</span>
+                    <span class="soul">🦴</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="section">
+        <div class="container">
+            <h2 class="section-title">🏛️ Каталог Помещиков</h2>
+            <div class="catalog-controls">
+                <div class="filter-controls">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="name">Сортировать по имени</option>
+                        <option value="souls">Сортировать по количеству душ</option>
+                        <option value="price">Сортировать по цене</option>
+                    </select>
+                </div>
+            </div>
+            <div id="catalogGrid" class="catalog-grid">
+                <!-- Landlord cards will be generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Cabinet Section -->
+    <section id="cabinet" class="section">
+        <div class="container">
+            <h2 class="section-title">🗄️ Мой Личный Кабинет</h2>
+            <div class="cabinet-stats">
+                <div class="stat-card">
+                    <h3>Всего куплено душ</h3>
+                    <div class="stat-value" id="totalSouls">0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Всего потрачено</h3>
+                    <div class="stat-value" id="totalSpent">₽0</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Приобретено помещиков</h3>
+                    <div class="stat-value" id="landlordCount">0</div>
+                </div>
+            </div>
+            <div class="purchased-list">
+                <h3>📜 История покупок</h3>
+                <div id="purchaseHistory" class="purchase-history">
+                    <p class="empty-state">Покупок пока нет. Начните строить свою империю!</p>
+                </div>
+            </div>
+            <div class="cabinet-actions">
+                <button class="action-button sell-button" onclick="sellRandomSoul()">
+                    💰 Продать случайную душу
+                </button>
+                <button class="action-button reset-button" onclick="resetCabinet()">
+                    🔄 Сбросить кабинет
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="section">
+        <div class="container">
+            <h2 class="section-title">📊 Аналитика Рынка</h2>
+            <div class="analytics-grid">
+                <div class="chart-container">
+                    <h3>Самые прибыльные помещики</h3>
+                    <div id="profitChart" class="bar-chart">
+                        <!-- Chart will be generated dynamically -->
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Самые жадные помещики</h3>
+                    <div id="greedyChart" class="bar-chart">
+                        <!-- Chart will be generated dynamically -->
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Самые странные помещики</h3>
+                    <div id="weirdChart" class="bar-chart">
+                        <!-- Chart will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2>🎉 Покупка успешна!</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button" onclick="closeModal()">Продолжить покупки</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/analytics.js"></script>
+</body>
+</html>
