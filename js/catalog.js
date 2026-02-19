@@ -1,10 +1,13 @@
 // Catalog JavaScript - Generate Landlord Cards Dynamically
 
 let currentSort = 'name';
-let filteredLandlords = [...landlords];
+let filteredLandlords = [];
 
 // Initialize catalog
 function initializeCatalog() {
+    filteredLandlords = [...landlords];
+    console.log('Landlords loaded:', landlords.map(l => ({id: l.id, name: l.name})));
+    console.log('Nozdrev found:', landlords.find(l => l.id === 3));
     renderCatalog();
     setupCatalogEventListeners();
 }
