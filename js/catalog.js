@@ -52,8 +52,7 @@ function renderCatalog() {
                 <div class="card-image-container">
                     <img src="${landlord.image}" 
                          alt="${landlord.name}" 
-                         class="card-image"
-                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjE4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjE4MCIgZmlsbD0iI0Y1RTZEMyIvPgogIDx0ZXh0IHg9IjE1MCIgeT0iOTAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhIiBmb250LXNpemU9IjE4IiBmaWxsPSIjOEI0NTEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iMC4zZW0iPjx0c3BhbiB4PSIxNTAiIGR5PSI4MCI+UG9ydHJhaXQ8L3RzcGFuPjx0c3BhbiB4PSIxNTAiIGR5PSIxMTAiPk9mPC90c3Bhbj48dHNwYW4geD0iMTUwIiBkeT0iMTQwIj4ke2xhbmRsb3JkLm5hbWV9PC90c3Bhbj48L3RleHQ+Cjwvc3ZnPg=='">
+                         class="card-image">
                 </div>
                 
                 <div class="card-details">
