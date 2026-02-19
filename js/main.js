@@ -18,7 +18,7 @@ const landlords = [
         pricePerSoul: 2.50,
         description: 'Джентльмен с изысканным вкусом и бесконечными мечтами',
         quote: 'Мой дорогой сэр, какая восхитительная возможность!',
-        image: 'images/manilov.jpg',
+        image: 'https://i.pinimg.com/1200x/80/6c/73/806c7386ead7f9ed1eef80477974701d.jpg',
         traits: ['мечтательный', 'вежливый', 'неэффективный']
     },
     {
@@ -29,7 +29,7 @@ const landlords = [
         pricePerSoul: 1.25,
         description: 'Осторожная вдова, которая любит торговаться',
         quote: 'Мне нужно тщательно обдумать это...',
-        image: 'images/korobochka.jpg',
+        image: 'https://i.pinimg.com/1200x/12/77/99/12779985cdb6052933586674c28603cd.jpg',
         traits: ['осторожная', 'упрямая', 'практичная']
     },
     {
@@ -40,7 +40,7 @@ const landlords = [
         pricePerSoul: 0.75,
         description: 'Безрассудный игрок и компульсивный лжец',
         quote: 'Выпьем за эту превосходную сделку!',
-        image: 'images/nozdrev.jpg',
+        image: 'https://i.pinimg.com/1200x/84/cb/e3/84cbe3fac105e666f3f6e2804b3ff0fe.jpg',
         traits: ['безрассудный', 'обаятельный', 'ненадёжный']
     },
     {
@@ -51,7 +51,7 @@ const landlords = [
         pricePerSoul: 0.40,
         description: 'Скупец, который всё собирает, но ничего не тратит',
         quote: 'Возьмите их, просто заберите их прочь!',
-        image: 'images/plushkin.jpg',
+        image: 'https://i.pinimg.com/1200x/9c/7a/eb/9c7aeb2ffdcb610c1a44f0631dbf2ecd.jpg',
         traits: ['жадный', 'паранойяльный', 'накопитель']
     },
     {
@@ -62,7 +62,7 @@ const landlords = [
         pricePerSoul: 1.50,
         description: 'Грубый, прямолинейный человек с весом',
         quote: 'Честная сделка для честного человека.',
-        image: 'images/sobakevich.jpg',
+        image: 'https://i.pinimg.com/736x/f5/9f/5f/f59f5f1574d3305f11fd9f32b4f46dd7.jpg',
         traits: ['прямой', 'честный', 'основательный']
     }
 ];
